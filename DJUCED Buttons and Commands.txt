@@ -1,0 +1,277 @@
+DJUCED Buttons and Commands
+Layout: 2Deck Horizontal
+Note: Interval things (knobs and faders) are weird with their values, after all they have multiple values
+
+Button							Action
+////From top to bottom
+/// Top bar
+[FX] 							chann=default  action=toggle_fx_panel value="auto"
+[MIXER]							chann=default  action=toggle_mixer_panel value="auto"
+[REC]							chann=default  action=toggle_recording_panel value="auto"
+[LINK]							chann=default  action=toggle_ableton_link value="0"
+MASTER knob						chann=default  action=master_volume value="+0"				// Interval
+[Fullscreen]					chann=default  action=full_screen value="0" // the one right next to the PC Time
+[Settings]						chann=default  action=settings value="0"
+[Help]							chann=default  action=about value="0"
+
+/// Waveforms section
+*Touch the waveform 1			chann=1  action=scratch value="auto"
+*Touch the waveform 2			chann=2  action=scratch value="auto"
+[+]								chann=default  action=zoom value="-1"
+[O] (cycling arrow things)		chann=default  action=zoom value="reset"
+[-]								chann=default  action=zoom value="+1"
+
+/// Deck 1 section
+[Track Player]					chann=1  action=set_deck_mode value="0"		// when you click the deck number and pops a menu
+[MASTER]						chann=1  action=select value="auto"
+[SYNC]							chann=1  action=sync value="0"
+[<] (button below the Key)		chann=1  action=key value="-1"
+[>] (the other one)				chann=1  action=key value="+1"
+[HOT CUE]						chann=1  action=show_track_tab value="0"
+	[1]							chann=1  action=hot_cue value="1 temporary"
+	[2]							chann=1  action=hot_cue value="2 temporary"
+	[3]							chann=1  action=hot_cue value="3 temporary"
+	[4]							chann=1  action=hot_cue value="4 temporary"
+	[5]							chann=1  action=hot_cue value="5 temporary"
+	[6]							chann=1  action=hot_cue value="6 temporary"
+	[7]							chann=1  action=hot_cue value="7 temporary"
+	[8]							chann=1  action=hot_cue value="8 temporary"
+
+[LOOP ROLL]						chann=1  action=show_track_tab value="1"
+	[1/16]						chann=1  action=loop_roll value="0.0625 temporary"
+	[1/8]						chann=1  action=loop_roll value="0.125 temporary"
+	[1/4]						chann=1  action=loop_roll value="0.25 temporary"
+	[1/2]						chann=1  action=loop_roll value="0.5 temporary"
+	[1]							chann=1  action=loop_roll value="1 temporary"
+	[2]							chann=1  action=loop_roll value="2 temporary"
+	[4]							chann=1  action=loop_roll value="4 temporary"
+	[8]							chann=1  action=loop_roll value="8 temporary"
+
+[SLICER]						chann=1  action=show_track_tab value="2"
+	[1]							chann=1  action=loop_slice value="1"
+	[2]							chann=1  action=loop_slice value="2"
+	[3]							chann=1  action=loop_slice value="3"
+	[4]							chann=1  action=loop_slice value="4"
+	[5]							chann=1  action=loop_slice value="5"
+	[6]							chann=1  action=loop_slice value="6"
+	[7]							chann=1  action=loop_slice value="7"
+	[8]							chann=1  action=loop_slice value="8"
+
+[BEAT JUMP]						chann=1  action=show_track_tab value="3"
+	[1<]						chann=1  action=skip_beat value="-1"
+	[>1]						chann=1  action=skip_beat value="+1"
+	[2<]						chann=1  action=skip_beat value="-2"
+	[>2]						chann=1  action=skip_beat value="+2"
+	[4<]						chann=1  action=skip_beat value="-4"
+	[>4]						chann=1  action=skip_beat value="+4"
+	[8<]						chann=1  action=skip_beat value="-8"
+	[>8]						chann=1  action=skip_beat value="+8"
+
+[1/32,64] (the loop button)		chann=1  action=loop value="0"
+	[<]							chann=1  action=loop_half value="0"
+	[>]							chann=1  action=loop_double value="0"
+
+[CUE]							chann=1  action=cue_stop value="auto temporary"
+[>] (play/pause button)			chann=1  action=play_pause value="0" 
+[*music note]					chann=1  action=toggle_keylock value="0"
+[SLIP]							chann=1  action=slip_mode value="auto"
+[Q]								chann=1  action=toggle_quantization value="auto"
+[*pitch/tempo fader]			chann=1  action=pitch value="+0"							// Interval
+
+/// Mixer section
+// Left Side
+[CUE]							chann=1  action=pfl_select value="0"
+[*volume fader]					chann=1  action=level value="+0"							// Interval
+GAIN knob						chann=1  action=gain value="+0"								// Interval
+[GAIN]							chann=1  action=toggle_autogain value="0"
+HIGH knob 						chann=1  action=high value="+0"								// Interval
+[HIGH]							chann=1  action=kill_high value="0"
+MID knob 						chann=1  action=medium value="+0"							// Interval
+[MID]							chann=1  action=kill_medium value="0"
+LOW knob 						chann=1  action=bass value="+0"								// Interval
+[LOW]							chann=1  action=kill_bass value="0"
+FILTER knob 					chann=1  action=set_pass_filter_amount value="+0"			// Interval
+[*little square next to effect] chann=1  action=toggle_pass_filter value="0"
+
+// Right Side
+GAIN knob						chann=2  action=gain value="+0"								// Interval
+[GAIN]							chann=2  action=toggle_autogain value="0"
+HIGH knob 						chann=2  action=high value="+0"								// Interval
+[HIGH]							chann=2  action=kill_high value="0"
+MID knob 						chann=2  action=medium value="+0"							// Interval
+[MID]							chann=2  action=kill_medium value="0"
+LOW knob 						chann=2  action=bass value="+0"								// Interval
+[LOW]							chann=2  action=kill_bass value="0"
+FILTER knob 					chann=2  action=set_pass_filter_amount value="+0"			// Interval
+[*little square next to effect] chann=2  action=toggle_pass_filter value="0"
+[CUE]							chann=2  action=pfl_select value="0"
+[*volume fader]					chann=2  action=level value="+0"							// Interval
+
+// Below the mixer section
+MIXING knob 					chann=default  action=headphone_mix value="+0"				// Interval
+LEVEL knob 						chann=default  action=headphone_volume value="+0"			// Interval
+// Crossfader
+[1] (left)						chann=1  action=crossfader_toggle_source_left value="1"
+[2] (left)						chann=2  action=crossfader_toggle_source_left value="1"
+[3] (left)						chann=3  action=crossfader_toggle_source_left value="0"
+[4] (left)						chann=4  action=crossfader_toggle_source_left value="0"
+Crossfader itself				chann=default  action=crossfader value="+0"					// Interval
+[1] (right)						chann=1  action=crossfader_toggle_source_right value="1"
+[2] (right)						chann=2  action=crossfader_toggle_source_right value="1"
+[3] (right)						chann=3  action=crossfader_toggle_source_right value="0"
+[4] (right)						chann=4  action=crossfader_toggle_source_right value="0"
+
+/// Deck 2 section
+[Track Player]					chann=2  action=set_deck_mode value="0"		// when you click the deck number and pops a menu
+[MASTER]						chann=2  action=select value="auto"
+[SYNC]							chann=2  action=sync value="0"
+[<] (button below the Key)		chann=2  action=key value="-1"
+[>] (the other one)				chann=2  action=key value="+1"
+[HOT CUE]						chann=2  action=show_track_tab value="0"
+	[1]							chann=2  action=hot_cue value="1 temporary"
+	[2]							chann=2  action=hot_cue value="2 temporary"
+	[3]							chann=2  action=hot_cue value="3 temporary"
+	[4]							chann=2  action=hot_cue value="4 temporary"
+	[5]							chann=2  action=hot_cue value="5 temporary"
+	[6]							chann=2  action=hot_cue value="6 temporary"
+	[7]							chann=2  action=hot_cue value="7 temporary"
+	[8]							chann=2  action=hot_cue value="8 temporary"
+
+[LOOP ROLL]						chann=2  action=show_track_tab value="1"
+	[1/16]						chann=2  action=loop_roll value="0.0625 temporary"
+	[1/8]						chann=2  action=loop_roll value="0.125 temporary"
+	[1/4]						chann=2  action=loop_roll value="0.25 temporary"
+	[1/2]						chann=2  action=loop_roll value="0.5 temporary"
+	[1]							chann=2  action=loop_roll value="1 temporary"
+	[2]							chann=2  action=loop_roll value="2 temporary"
+	[4]							chann=2  action=loop_roll value="4 temporary"
+	[8]							chann=2  action=loop_roll value="8 temporary"
+
+[SLICER]						chann=2  action=show_track_tab value="2"
+	[1]							chann=2  action=loop_slice value="1"
+	[2]							chann=2  action=loop_slice value="2"
+	[3]							chann=2  action=loop_slice value="3"
+	[4]							chann=2  action=loop_slice value="4"
+	[5]							chann=2  action=loop_slice value="5"
+	[6]							chann=2  action=loop_slice value="6"
+	[7]							chann=2  action=loop_slice value="7"
+	[8]							chann=2  action=loop_slice value="8"
+
+[BEAT JUMP]						chann=2  action=show_track_tab value="3"
+	[1<]						chann=2  action=skip_beat value="-1"
+	[>1]						chann=2  action=skip_beat value="+1"
+	[2<]						chann=2  action=skip_beat value="-2"
+	[>2]						chann=2  action=skip_beat value="+2"
+	[4<]						chann=2  action=skip_beat value="-4"
+	[>4]						chann=2  action=skip_beat value="+4"
+	[8<]						chann=2  action=skip_beat value="-8"
+	[>8]						chann=2  action=skip_beat value="+8"
+
+[1/32,64] (the loop button)		chann=2  action=loop value="0"
+	[<]							chann=2  action=loop_half value="0"
+	[>]							chann=2  action=loop_double value="0"
+
+[CUE]							chann=2  action=cue_stop value="auto temporary"
+[>] (play/pause button)			chann=2  action=play_pause value="0" 
+[*music note]					chann=2  action=toggle_keylock value="0"
+[SLIP]							chann=2  action=slip_mode value="auto"
+[Q]								chann=2  action=toggle_quantization value="auto"
+[*pitch/tempo fader]			chann=2  action=pitch value="+0"							// Interval
+
+
+/// Edit Beat Grid section
+// Deck 1
+[Edit beat grid]				chann=1  action=show_grid_edit value="1"    // when you click the deck number and pops a menu
+[<<]							chann=1  action=moveGrid value="-20"
+[<]								chann=1  action=moveGrid value="-1"
+[I]								chann=1  action=reset_first_beat_notPlaying value="0"
+[>]								chann=1  action=moveGrid value="+1"
+[>>]							chann=1  action=moveGrid value="+20"
+[O] (cycling arrow things)		chann=1  action=resetBPM value="0"
+[||| <]							chann=1  action=modify_bpm value="-1"
+[||| >]							chann=1  action=modify_bpm value="+1"
+[*U turn sign]					chann=1  action=undo_beatgrid value="0"
+[TAP]							chann=1  action=BPM_tap_listen_toggle value="0"
+[x 2]							chann=1  action=double_bpm value="0"
+[/ 2]							chann=1  action=divide_bpm value="0"
+// Deck 2
+[Edit beat grid]				chann=2  action=show_grid_edit value="1"    // when you click the deck number and pops a menu
+[<<]							chann=2  action=moveGrid value="-20"
+[<]								chann=2  action=moveGrid value="-1"
+[I]								chann=2  action=reset_first_beat_notPlaying value="0"
+[>]								chann=2  action=moveGrid value="+1"
+[>>]							chann=2  action=moveGrid value="+20"
+[O] (cycling arrow things)		chann=2  action=resetBPM value="0"
+[||| <]							chann=2  action=modify_bpm value="-1"
+[||| >]							chann=2  action=modify_bpm value="+1"
+[*U turn sign]					chann=2  action=undo_beatgrid value="0"
+[TAP]							chann=2  action=BPM_tap_listen_toggle value="0"
+[x 2]							chann=2  action=double_bpm value="0"
+[/ 2]							chann=2  action=divide_bpm value="0"
+
+/// Sampler section
+// Deck 1
+[Sampler]						chann=1  action=set_deck_mode value="1"		// when you click the deck number and pops a menu
+Volume slider 1 				chann=1001  action=sample_volume value="+0"					// Interval
+Volume slider 2 				chann=1002  action=sample_volume value="+0"					// Interval
+Volume slider 3 				chann=1003  action=sample_volume value="+0"					// Interval
+Volume slider 4 				chann=1004  action=sample_volume value="+0"					// Interval
+[16,8,4]						chann=default  action=set_number_of_sampler_pages value="1"	// for 16:value=1; 8:value=2; 4:value=4
+[Q]								chann=1  action=toggle_sampler_quantization value="0"
+[*Gear symbol]					chann=1  action=save_sample_pack value="0"
+[*Upload symbol]				chann=1  action=save_sample_pack value="2"
+[*Download symbol]				chann=1  action=save_sample_pack value="1"
+//The actual samples button are not labeled, so I'm going to count them left to right, top to bottom
+// like this [01][02][03][04]
+			 [05][06][07][08]
+			 [09][10][11][12]
+			 [13][14][15][16]
+	[01]						chann=1001  action=sample_load_play value="1 temporary"
+	[02]						chann=1002  action=sample_load_play value="1 temporary"
+	[03]						chann=1003  action=sample_load_play value="1 temporary"
+	[04]						chann=1004  action=sample_load_play value="1 temporary"
+	[05]						chann=1001  action=sample_load_play value="2 temporary"
+	[06]						chann=1002  action=sample_load_play value="2 temporary"
+	[07]						chann=1003  action=sample_load_play value="2 temporary"
+	[08]						chann=1004  action=sample_load_play value="2 temporary"
+	[09]						chann=1001  action=sample_load_play value="3 temporary"
+	[10]						chann=1002  action=sample_load_play value="3 temporary"
+	[11]						chann=1003  action=sample_load_play value="3 temporary"
+	[12]						chann=1004  action=sample_load_play value="3 temporary"
+	[13]						chann=1001  action=sample_load_play value="4 temporary"
+	[14]						chann=1002  action=sample_load_play value="4 temporary"
+	[15]						chann=1003  action=sample_load_play value="4 temporary"
+	[16]						chann=1004  action=sample_load_play value="4 temporary"
+
+// Deck 2
+[Sampler]						chann=2  action=set_deck_mode value="1"		// when you click the deck number and pops a menu
+Volume slider 1 				chann=2001  action=sample_volume value="+0"					// Interval
+Volume slider 2 				chann=2002  action=sample_volume value="+0"					// Interval
+Volume slider 3 				chann=2003  action=sample_volume value="+0"					// Interval
+Volume slider 4 				chann=2004  action=sample_volume value="+0"					// Interval
+[16,8,4]						chann=default  action=set_number_of_sampler_pages value="1"	// for 16:value=1; 8:value=2; 4:value=4
+[Q]								chann=2  action=toggle_sampler_quantization value="0"
+[*Gear symbol]					chann=2  action=save_sample_pack value="0"
+[*Upload symbol]				chann=2  action=save_sample_pack value="2"
+[*Download symbol]				chann=2  action=save_sample_pack value="1"
+//The actual samples button are not labeled, so I'm going to count them left to right, top to bottom
+// like this [01][02][03][04]
+			 [05][06][07][08]
+			 [09][10][11][12]
+			 [13][14][15][16]
+	[01]						chann=2001  action=sample_load_play value="1 temporary"
+	[02]						chann=2002  action=sample_load_play value="1 temporary"
+	[03]						chann=2003  action=sample_load_play value="1 temporary"
+	[04]						chann=2004  action=sample_load_play value="1 temporary"
+	[05]						chann=2001  action=sample_load_play value="2 temporary"
+	[06]						chann=2002  action=sample_load_play value="2 temporary"
+	[07]						chann=2003  action=sample_load_play value="2 temporary"
+	[08]						chann=2004  action=sample_load_play value="2 temporary"
+	[09]						chann=2001  action=sample_load_play value="3 temporary"
+	[10]						chann=2002  action=sample_load_play value="3 temporary"
+	[11]						chann=2003  action=sample_load_play value="3 temporary"
+	[12]						chann=2004  action=sample_load_play value="3 temporary"
+	[13]						chann=2001  action=sample_load_play value="4 temporary"
+	[14]						chann=2002  action=sample_load_play value="4 temporary"
+	[15]						chann=2003  action=sample_load_play value="4 temporary"
+	[16]						chann=2004  action=sample_load_play value="4 temporary"
