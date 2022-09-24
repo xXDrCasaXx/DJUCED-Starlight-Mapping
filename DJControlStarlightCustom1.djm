@@ -183,6 +183,13 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <deck type="sampler" load="" ID="4" cells="4"/>
  </decks>
  <midi-device>
+    <!--So here basically are the controls declared well identified with a name and their messages,
+        Changing the message fields will change the buttons set for that particular control, there are
+        some things that I don't understand yet, like the two output fields in some controls, and the
+        things with intervals of values.
+        You can also change the name of the control, but make sure that you write the same name in the midi-map section,
+        because it's gonna look for the same name to execute the command.
+        Quick note: I couldn't figure it out how to create/add new controls, so for now I'm just replacing the existing ones-->
   <control name="CUE_A">
    <input type="toggle" message="91 06 7f" min="0" max="7f"/>
    <output type="toggle" message="91 06 7f" min="0" max="7f"/>
@@ -566,6 +573,11 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   </control>
  </midi-device>
  <midi-map>
+    <!--Here are the commands that are executed when you push the button based on the configuration
+        above.
+        Notes: + the '&quot' thing, I don't know what that is, so I leave it alone
+               + the 'temporary' means that the action is gonna last while the corresponding button is 
+                 pusshed down, once you let it go, the action stops.-->
   <map name="CUE_A" action="chann=1  action=cue_stop value=&quot;auto temporary&quot;"/>
   <map name="CUE_B" action="chann=2  action=cue_stop value=&quot;auto temporary&quot;"/>
   <map name="CUE_SH_A" action="chann=1  action=stop value=&quot;auto&quot;"/>
@@ -666,7 +678,6 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <map action="chann=default  action=browser_up_down value=&quot;auto&quot;" name="SHIFT_TOUCH_JOGB"/>
   <map action="chann=1  action=show_track_tab value=&quot;1&quot;" name="LOOP_TAB_A"/>
   <map action="chann=2  action=show_track_tab value=&quot;1&quot;" name="LOOP_TAB_B"/>
-<!-- chann=1  action=show_track_tab value="3"-->
 
  </midi-map>
 </midi>
