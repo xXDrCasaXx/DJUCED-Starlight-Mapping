@@ -1,0 +1,254 @@
+This is a list with ALMOST every signal that the Starlight DJ Controller sends to the computer when you press or move something
+I used Wireshark to capture everything and the wrote this for better viewing (?)
+A signal is sent when you press a button, and when you release it, that's why everything is labeled pressed/released, it may or may not be unnecessary.
+About the controls with intervals of values, like faders and knobs, I only recorded the most relevant parts, Min/Max level for Volume knobs, and Min/Center/Max level for the rest.
+Now why is this usefull. Well DJUCED has a stupid remaping system that made me basically hack into my controller. It's an XML file with all the buttons and knobs declared, and then in another section is what they do. And the default maping for the Starlight...I just don't like it. And I don't want to be paying every month for serato dj pro since spending 3 hours pressing every button in the controller and writing down what each button and knob does is so fun....and free.
+Now here is what I know...
+- The 'Message' fields are the information that djuced uses to set the mapping.
+- The Messages are a bunch of hex values because....programmers (idk why actually)
+	and they look like this [91 05 7f]
+- The last field of the message is the value or state
+	so buttons have two states (pushed/not pushed), so their values go [7f] when pushed and [00] when released;
+	knobs and faders have and interval of values, that go from [00] to [7f], going through everything in between
+Notes:
+	- The Bass/Filter button always sends the same message, no matter if it is lit or not.
+	- The Vinyl button sends 2 messages at the same time when pressed, it also sends 2 different messages when the Shift button is pressed that can be used.
+
+
+Event										Message
+
+[Deck 1] Tempo Fader at top					b1 08 7f
+[Deck 1] Tempo Fader at center				b1 08 40
+[Deck 1] Tempo Fader at bottom				b1 08 00
+[Deck 1] Sync button pressed				91 05 7f
+[Deck 1] Sync button released				91 05 00
+[Deck 1] Shift + Sync pressed				94 05 7f
+[Deck 1] Shift + Sync released				94 05 00
+[Deck 1] Cue button pressed					91 06 7f
+[Deck 1] Cue button released				91 06 00
+[Deck 1] Shift + Cue pressed				94 06 7f
+[Deck 1] Shift + Cue released				94 06 00
+[Deck 1] Play button pressed				91 07 7f
+[Deck 1] Play button released				91 07 00
+[Deck 1] Shift + Play pressed				94 07 7f
+[Deck 1] Shift + Play released				94 07 00
+[Deck 1] Headphones button pressed			91 0c 7f
+[Deck 1] Headphones button released			91 0c 00
+[Deck 1] Shift + Headphones pressed			94 0c 7f
+[Deck 1] Shift + Headphones released		94 0c 00
+[Genera] Shift button pressed				90 03 7f
+[Genera] Shift button released				90 03 00
+[Deck 1] HotCue button pressed				91 0f 7f
+[Deck 1] HotCue button released				91 0f 00
+[Deck 1] HotCue_1 pressed					96 00 7f
+[Deck 1] HotCue_1 released					96 00 00
+[Deck 1] Shift + HotCue_1 pressed			96 08 7f
+[Deck 1] Shift + HotCue_1 released			96 08 00
+[Deck 1] HotCue_2 pressed					96 01 7f
+[Deck 1] HotCue_2 released					96 01 00
+[Deck 1] Shift + HotCue_2 pressed			96 09 7f
+[Deck 1] Shift + HotCue_2 released			96 09 00
+[Deck 1] HotCue_3 pressed					96 02 7f
+[Deck 1] HotCue_3 released					96 02 00
+[Deck 1] Shift + HotCue_3 pressed			96 0a 7f
+[Deck 1] Shift + HotCue_3 released			96 0a 00
+[Deck 1] HotCue_4 pressed					96 03 7f
+[Deck 1] HotCue_4 released					96 03 00
+[Deck 1] Shift + HotCue_4 pressed			96 0b 7f
+[Deck 1] Shift + HotCue_4 released			96 0b 00
+[Deck 1] Loop button pressed				91 10 7f
+[Deck 1] Loop button released				91 10 00
+[Deck 1] Loop_1 pressed						96 10 7f
+[Deck 1] Loop_1 released					96 10 00
+[Deck 1] Shift + Loop_1 pressed				96 18 7f
+[Deck 1] Shift + Loop_1 released			96 18 00
+[Deck 1] Loop_2 pressed						96 11 7f
+[Deck 1] Loop_2 released					96 11 00
+[Deck 1] Shift + Loop_2 pressed				96 19 7f
+[Deck 1] Shift + Loop_2 released			96 19 00
+[Deck 1] Loop_3 pressed						96 12 7f
+[Deck 1] Loop_3 released					96 12 00
+[Deck 1] Shift + Loop_3 pressed				96 1a 7f
+[Deck 1] Shift + Loop_3 released			96 1a 00
+[Deck 1] Loop_4 pressed						96 13 7f
+[Deck 1] Loop_4 released					96 13 00
+[Deck 1] Shift + Loop_4 pressed				96 1b 7f
+[Deck 1] Shift + Loop_4 released			96 1b 00
+[Deck 1] Shift + HotCue (FX) pressed		91 11 7f
+[Deck 1] Shift + HotCue (FX) released		91 11 00
+[Deck 1] FX_1 pressed						96 20 7f
+[Deck 1] FX_1 released						96 20 00
+[Deck 1] Shift + FX_1 pressed				26 28 7f
+[Deck 1] Shift + FX_1 released				26 28 00
+[Deck 1] FX_2 pressed						96 21 7f
+[Deck 1] FX_2 released						96 21 00
+[Deck 1] Shift + FX_2 pressed				96 29 7f
+[Deck 1] Shift + FX_2 released				96 29 00
+[Deck 1] FX_3 pressed						96 22 7f
+[Deck 1] FX_3 released						96 22 00
+[Deck 1] Shift + FX_3 pressed				96 2a 7f
+[Deck 1] Shift + FX_3 released				96 2a 00
+[Deck 1] FX_4 pressed						96 23 7f
+[Deck 1] FX_4 released						96 23 00
+[Deck 1] Shift + FX_4 pressed				96 2b 7f
+[Deck 1] Shift + FX_4 released				96 2b 00
+[Deck 1] Shift + Loop (Sampler) pressed		91 12 7f
+[Deck 1] Shift + Loop (Sampler) released	91 12 00
+[Deck 1] Sampler_1 pressed					96 30 7f
+[Deck 1] Sampler_1 released					96 30 00
+[Deck 1] Shift + Sampler_1 pressed			96 38 7f
+[Deck 1] Shift + Sampler_1 released			96 38 00
+[Deck 1] Sampler_2 pressed					96 31 7f
+[Deck 1] Sampler_2 released					96 31 00
+[Deck 1] Shift + Sampler_2 pressed			96 39 7f
+[Deck 1] Shift + Sampler_2 released			96 39 00
+[Deck 1] Sampler_3 pressed					96 32 7f
+[Deck 1] Sampler_3 released					96 32 00
+[Deck 1] Shift + Sampler_3 pressed			96 3a 7f
+[Deck 1] Shift + Sampler_3 released			96 3a 00
+[Deck 1] Sampler_4 pressed					96 33 7f
+[Deck 1] Sampler_4 released					96 33 00
+[Deck 1] Shift + Sampler_4 pressed			96 3b 7f
+[Deck 1] Shift + Sampler_4 released			96 3b 00
+[Genera] Master knob min_level				b0 03 00
+[Genera] Master knob max_level				b0 03 7f
+[Deck 1] Volume knob min_level				b1 00 00
+[Deck 1] Volume knob max_level				b1 00 7f
+[Genera] Bass/Filter button pressed			90 01 7f
+[Genera] Bass/Filter button released		90 01 00
+/////for the next 3 the 'bass/filter' button is disabled (off)
+[Deck 1] Bass knob min_level				b1 02 00
+[Deck 1] Bass knob 12_o'clock_pos			b1 02 40
+[Deck 1] Bass knob max_level				b1 02 7f
+/////for the next 3 the 'bass/filter' button is enabled (lit)
+[Deck 1] Filter knob min_level				b1 01 00
+[Deck 1] Filter knob 12_o'clock_pos			b1 01 40
+[Deck 1] Filter knob max_level				b1 01 7f
+
+//That was the first half of the controller
+
+[Deck 2] Volume knob min_level				b2 00 00
+[Deck 2] Volume knob max_level				b2 00 7f
+/////for the next 3 the 'bass/filter' button is disabled (off)
+[Deck 2] Bass knob min_level				b2 02 00
+[Deck 2] Bass knob 12_o'clock_pos			b2 02 40
+[Deck 2] Bass knob max_level				b2 02 7f
+/////for the next 3 the 'bass/filter' button is enabled (lit)
+[Deck 2] Filter knob min_level				b2 01 00
+[Deck 2] Filter knob 12_o'clock_pos			b2 01 40
+[Deck 2] Filter knob max_level				b2 01 7f
+[Genera] Crossfader on left side			b0 00 00
+[Genera] Crossfader on center(ish)			b0 00 3a
+[Genera] Crossfader on right side			b0 00 7f
+[Genera] Headphones knob min_level			b0 04 00
+[Genera] Headphones knob max_level			b0 04 7f
+[Deck 2] HotCue button pressed				92 0f 7f
+[Deck 2] HotCue button released				92 0f 00
+[Deck 2] HotCue_1 pressed					97 00 7f
+[Deck 2] HotCue_1 released					97 00 00
+[Deck 2] Shift + HotCue_1 pressed			97 08 7f
+[Deck 2] Shift + HotCue_1 released			97 08 00
+[Deck 2] HotCue_2 pressed					97 01 7f
+[Deck 2] HotCue_2 released					97 01 00
+[Deck 2] Shift + HotCue_2 pressed			97 09 7f
+[Deck 2] Shift + HotCue_2 released			97 09 00
+[Deck 2] HotCue_3 pressed					97 02 7f
+[Deck 2] HotCue_3 released					97 02 00
+[Deck 2] Shift + HotCue_3 pressed			97 0a 7f
+[Deck 2] Shift + HotCue_3 released			97 0a 00
+[Deck 2] HotCue_4 pressed					97 03 7f
+[Deck 2] HotCue_4 released					97 03 00
+[Deck 2] Shift + HotCue_4 pressed			97 0b 7f
+[Deck 2] Shift + HotCue_4 released			97 0b 00
+[Deck 2] Shift + HotCue (FX) pressed		92 11 7f
+[Deck 2] Shift + HotCue (FX) released		92 11 00
+[Deck 2] FX_1 pressed						97 20 7f
+[Deck 2] FX_1 released						97 20 00
+[Deck 2] Shift + FX_1 pressed				97 28 7f
+[Deck 2] Shift + FX_1 released				97 28 00
+[Deck 2] FX_2 pressed						97 21 7f
+[Deck 2] FX_2 released						97 21 00
+[Deck 2] Shift + FX_2 pressed				97 29 7f
+[Deck 2] Shift + FX_2 released				97 29 00
+[Deck 2] FX_3 pressed						97 22 7f
+[Deck 2] FX_3 released						97 22 00
+[Deck 2] Shift + FX_3 pressed				97 2a 7f
+[Deck 2] Shift + FX_3 released				97 2a 00
+[Deck 2] FX_4 pressed						97 23 7f
+[Deck 2] FX_4 released						97 23 00
+[Deck 2] Shift + FX_4 pressed				97 2b 7f
+[Deck 2] Shift + FX_4 released				97 2b 00
+[Deck 2] Loop button pressed				92 10 7f
+[Deck 2] Loop botton released				92 10 00
+[Deck 2] Loop_1 pressed						97 10 7f
+[Deck 2] Loop_1 released					97 10 00
+[Deck 2] Shift + Loop_1 pressed				97 18 7f
+[Deck 2] Shift + Loop_1 released			97 18 00
+[Deck 2] Loop_2 pressed						97 11 7f
+[Deck 2] Loop_2 released					97 11 00
+[Deck 2] Shift + Loop_2 pressed				97 19 7f
+[Deck 2] Shift + Loop_2 released			97 19 00
+[Deck 2] Loop_3 pressed						97 12 7f
+[Deck 2] Loop_3 released					97 12 00
+[Deck 2] Shift + Loop_3 pressed				97 1a 7f
+[Deck 2] Shift + Loop_3 released			97 1a 00
+[Deck 2] Loop_4 pressed						97 13 7f
+[Deck 2] Loop_4 released					97 13 00
+[Deck 2] Shift + Loop_4 pressed				97 1b 7f
+[Deck 2] Shift + Loop_4 released			97 1b 00
+[Deck 2] Shift + Loop (Sampler) pressed		92 12 7f
+[Deck 2] Shift + Loop (Sampler) released	92 12 00
+[Deck 2] Sampler_1 pressed					97 30 7f
+[Deck 2] Sampler_1 released					97 30 00
+[Deck 2] Shift + Sampler_1 pressed			97 38 7f
+[Deck 2] Shift + Sampler_1 released			97 38 00
+[Deck 2] Sampler_2 pressed					97 31 7f
+[Deck 2] Sampler_2 released					97 31 00
+[Deck 2] Shift + Sampler_2 pressed			97 39 7f
+[Deck 2] Shift + Sampler_2 released			97 39 00
+[Deck 2] Sampler_3 pressed					97 32 7f
+[Deck 2] Sampler_3 released					97 32 00
+[Deck 2] Shift + Sampler_3 pressed			97 3a 7f
+[Deck 2] Shift + Sampler_3 released			97 3a 00
+[Deck 2] Sampler_4 pressed					97 33 7f
+[Deck 2] Sampler_4 released					97 33 00
+[Deck 2] Shift + Sampler_4 pressed			97 3b 7f
+[Deck 2] Shift + Sampler_4 released			97 3b 00
+[Deck 2] Headphones button pressed			92 0c 7f
+[Deck 2] Headphones button released			92 0c 00
+[Deck 2] Shift + Headphones pressed			95 0c 7f
+[Deck 2] Shift + Headphones released		95 0c 00
+////The 'Vinyl' button sends 2 sets of messages at the same time, one for each jogwheel 
+[Genera] Vinyl pressed for jog1				91 03 7f
+[Genera] Vinyl released for jog1			91 03 00
+[Genera] Vinyl pressed for jog2				92 03 7f
+[Genera] Vinyl released	 for jog2			92 03 00
+////It also has differents messages with the Shift button, that are not labeled in the Startlight, but they exist
+[Genera] Shift + Vinyl signal_1 pressed		94 03 7f
+[Genera] Shift + Vinyl signal_1 released	94 03 00
+[Genera] Shift + Vinyl signal_2 pressed		95 03 7f
+[Genera] Shift + Vinyl signal_2 released	95 03 00
+[Deck 2] Sync button pressed				92 05 7f
+[Deck 2] Sync button released				92 05 00
+[Deck 2] Shift + Sync pressed				95 05 7f
+[Deck 2] Shift + Sync released				95 05 00
+[Deck 2] Cue button pressed					92 06 7f
+[Deck 2] Cue button released				92 06 00
+[Deck 2] Shift + Cue pressed				95 06 7f
+[Deck 2] Shift + Cue released				95 06 00
+[Deck 2] Play button pressed				92 07 7f
+[Deck 2] Play button released				92 07 00
+[Deck 2] Shift + Play pressed				95 07 7f
+[Deck 2] Shift + Play released				95 07 00
+[Deck 2] Tempo Fader at top 				b2 08 7f
+[Deck 2] Tempo Fader at center				b2 08 40
+[Deck 2] Tempo Fader at bottom				b2 08 00
+//// I didn't mess around with the jogwheels too much because there is a lot going on whenever you move those things so...
+[Deck 1] JogWheel touched					91 08 7f
+[Deck 1] JogWheel released					91 08 00
+[Deck 1] Shift + JogWheel touched			94 08 7f
+[Deck 1] Shift + JogWheel released			94 08 00
+[Deck 2] JogWheel touched					92 08 7f
+[Deck 2] JogWheel released					92 08 00
+[Deck 2] Shift + JogWheel touched			95 08 7f
+[Deck 2] Shift + JogWheel released			95 08 00

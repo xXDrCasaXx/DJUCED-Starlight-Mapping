@@ -1,0 +1,666 @@
+<!DOCTYPE MidiML>
+<midi name="DJControl Starlight" map-name="DJControl Starlight" description="Hercules DJControl Starlight default MIDI Mapping" sysex="F07E7F060200014E02001B0001000000F7" version="3">
+ <picture>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</picture>
+ <help-url url=""/>
+ <soundcard channels="4" volume="true"/>
+ <decks comboboxlayoutIndex="0" MIXER="true" REC="false" FX="false" mode="2H">
+  <deck type="player" load="" ID="1"/>
+  <deck type="player" load="" ID="2"/>
+  <deck type="sampler" load="" ID="3" cells="4"/>
+  <deck type="sampler" load="" ID="4" cells="4"/>
+ </decks>
+ <midi-device>
+  <control name="CUE_A">
+   <input type="toggle" message="91 06 7f" min="0" max="7f"/>
+   <output type="toggle" message="91 06 7f" min="0" max="7f"/>
+   <output type="toggle" message="94 06 7f" min="0" max="7f"/>
+  </control>
+  <control name="CUE_B">
+   <input type="toggle" message="92 06 7f" min="0" max="7f"/>
+   <output type="toggle" message="92 06 7f" min="0" max="7f"/>
+   <output type="toggle" message="94 06 7f" min="0" max="7f"/>
+  </control>
+  <control name="CUE_SH_A">
+   <input type="toggle" message="94 06 7f" min="0" max="7f"/>
+  </control>
+  <control name="CUE_SH_B">
+   <input type="toggle" message="95 06 7f" min="0" max="7f"/>
+  </control>
+  <control name="DELETE_HC1_A">
+   <input type="toggle" message="96 08 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 08 7f" min="0" max="7f"/>
+  </control>
+  <control name="DELETE_HC1_B">
+   <input type="toggle" message="97 08 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 08 7f" min="0" max="7f"/>
+  </control>
+  <control name="DELETE_HC2_A">
+   <input type="toggle" message="96 09 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 09 7f" min="0" max="7f"/>
+  </control>
+  <control name="DELETE_HC2_B">
+   <input type="toggle" message="97 09 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 09 7f" min="0" max="7f"/>
+  </control>
+  <control name="DELETE_HC3_A">
+   <input type="toggle" message="96 0a 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 0a 7f" min="0" max="7f"/>
+  </control>
+  <control name="DELETE_HC3_B">
+   <input type="toggle" message="97 0a 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 0a 7f" min="0" max="7f"/>
+  </control>
+  <control name="DELETE_HC4_A">
+   <input type="toggle" message="96 0b 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 0b 7f" min="0" max="7f"/>
+  </control>
+  <control name="DELETE_HC4_B">
+   <input type="toggle" message="97 0b 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 0b 7f" min="0" max="7f"/>
+  </control>
+  <control name="FILTER_A">
+   <input type="interval" message="b1 01 3f" min="0" max="7f"/>
+   <lsbit-input type="toggle" message="b1 21 3f" min="0" max="7f"/>
+  </control>
+  <control name="FILTER_B">
+   <input type="interval" message="b2 01 40" min="0" max="7f"/>
+   <lsbit-input type="toggle" message="b2 21 40" min="0" max="7f"/>
+  </control>
+  <control name="FX_A1_ON">
+   <input type="toggle" message="96 20 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 20 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX_A2_ON">
+   <input type="toggle" message="96 21 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 21 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX_A3_ON">
+   <input type="toggle" message="96 22 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 22 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX_B1_ON">
+   <input type="toggle" message="97 20 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 20 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX_B2_ON">
+   <input type="toggle" message="97 21 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 21 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX_B3_ON">
+   <input type="toggle" message="97 22 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 22 7f" min="0" max="7f"/>
+  </control>
+  <control name="HC1_A">
+   <input type="toggle" message="96 00 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 00 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 08 7f" min="0" max="7f"/>
+  </control>
+  <control name="HC1_B">
+   <input type="toggle" message="97 00 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 00 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 08 7f" min="0" max="7f"/>
+  </control>
+  <control name="HC2_A">
+   <input type="toggle" message="96 01 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 01 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 09 7f" min="0" max="7f"/>
+  </control>
+  <control name="HC2_B">
+   <input type="toggle" message="97 01 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 01 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 09 7f" min="0" max="7f"/>
+  </control>
+  <control name="HC3_A">
+   <input type="toggle" message="96 02 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 02 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 0a 7f" min="0" max="7f"/>
+  </control>
+  <control name="HC3_B">
+   <input type="toggle" message="97 02 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 02 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 0a 7f" min="0" max="7f"/>
+  </control>
+  <control name="HC4_A">
+   <input type="toggle" message="96 03 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 03 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 0b 7f" min="0" max="7f"/>
+  </control>
+  <control name="HC4_B">
+   <input type="toggle" message="97 03 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 03 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 0b 7f" min="0" max="7f"/>
+  </control>
+  <control name="HOTCUE_TAB_A">
+   <input type="toggle" message="91 0f 7f" min="0" max="7f"/>
+  </control>
+  <control name="HOTCUE_TAB_B">
+   <input type="toggle" message="92 0f 7f" min="0" max="7f"/>
+  </control>
+  <control name="JOG_bend_A">
+   <input type="interval" incremental="yes" steps-per-turn="256" message="b1 09 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="JOG_bend_B">
+   <input type="interval" incremental="yes" steps-per-turn="256" message="b2 09 01" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="JOG_SCRATCH_A">
+   <input type="interval" incremental="yes" steps-per-turn="256" message="b1 0a 01" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="JOG_SCRATCH_B">
+   <input type="interval" incremental="yes" steps-per-turn="256" message="b2 0a 01" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="JOG_SHIFT_BEND_A">
+   <input type="interval" incremental="yes" steps-per-turn="64" message="b4 09 01" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="JOG_SHIFT_BEND_B">
+   <input type="interval" incremental="yes" steps-per-turn="64" message="b5 09 01" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="JOG_TOUCH_A">
+   <input type="toggle" message="91 08 00" min="0" max="7f"/>
+  </control>
+  <control name="JOG_TOUCH_B">
+   <input type="toggle" message="92 08 00" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_1_BEAT_A">
+   <input type="toggle" message="96 10 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 10 7f" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_1_BEAT_B">
+   <input type="toggle" message="97 10 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 10 7f" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_2_BEAT_A">
+   <input type="toggle" message="96 11 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 11 7f" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_2_BEAT_B">
+   <input type="toggle" message="97 11 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 11 7f" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_4_BEAT_A">
+   <input type="toggle" message="96 12 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 12 7f" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_4_BEAT_B">
+   <input type="toggle" message="97 12 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 12 7f" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_8_BEAT_A">
+   <input type="toggle" message="96 13 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 13 7f" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_8_BEAT_B">
+   <input type="toggle" message="97 13 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 13 7f" min="0" max="7f"/>
+  </control>
+  <control name="LOW_A">
+   <input type="interval" message="b1 02 40" min="0" max="7f"/>
+   <lsbit-input type="toggle" message="b1 22 40" min="0" max="7f"/>
+  </control>
+  <control name="LOW_B">
+   <input type="interval" message="b2 02 61" min="0" max="7f"/>
+   <lsbit-input type="toggle" message="b2 22 61" min="0" max="7f"/>
+  </control>
+  <control name="MASTER_VOL_L">
+   <output type="interval" name="MASTER_L" message="b0 40 7f" min="0" max="7f"/>
+  </control>
+  <control name="MASTER_VOL_R">
+   <output type="interval" name="MASTER_R" message="b0 41 7f" min="0" max="7f"/>
+  </control>
+  <control name="PFL_A">
+   <input type="toggle" message="91 0c 7f" min="0" max="7f"/>
+   <output type="toggle" message="91 0c 7f" min="0" max="7f"/>
+  </control>
+  <control name="PFL_B">
+   <input type="toggle" message="92 0c 7f" min="0" max="7f"/>
+   <output type="toggle" message="92 0c 7f" min="0" max="7f"/>
+  </control>
+  <control name="PHASE_LED_LEFT_A">
+   <output type="toggle" message="91 1C 00" min="0" max="7f"/>
+  </control>
+  <control name="PHASE_LED_LEFT_B">
+   <output type="toggle" message="92 1C 00" min="0" max="7f"/>
+  </control>
+  <control name="PHASE_LED_RIGHT_A">
+   <output type="toggle" message="91 1D 00" min="0" max="7f"/>
+  </control>
+  <control name="PHASE_LED_RIGHT_B">
+   <output type="toggle" message="92 1D 00" min="0" max="7f"/>
+  </control>
+  <control name="PITCH_A">
+   <input type="interval" inverted="yes" message="b1 08 39" min="0" max="7f"/>
+   <lsbit-input type="toggle" message="b1 28 39" min="0" max="7f"/>
+  </control>
+  <control name="PITCH_B">
+   <input type="interval" inverted="yes" message="b2 08 23" min="0" max="7f"/>
+   <lsbit-input type="toggle" message="b2 28 23" min="0" max="7f"/>
+  </control>
+  <control name="PITCH_LED_DOWN_A">
+   <output type="toggle" message="91 1F 00" min="0" max="7f"/>
+  </control>
+  <control name="PITCH_LED_DOWN_B">
+   <output type="toggle" message="92 1F 00" min="0" max="7f"/>
+  </control>
+  <control name="PITCH_LED_UP_A">
+   <output type="toggle" message="91 1E 00" min="0" max="7f"/>
+  </control>
+  <control name="PITCH_LED_UP_B">
+   <output type="toggle" message="92 1E 00" min="0" max="7f"/>
+  </control>
+  <control name="PLAY_A">
+   <input type="toggle" message="91 07 7f" min="0" max="7f"/>
+   <output type="toggle" message="91 07 7f" min="0" max="7f"/>
+   <output type="toggle" message="94 07 7f" min="0" max="7f"/>
+  </control>
+  <control name="PLAY_B">
+   <input type="toggle" message="92 07 7f" min="0" max="7f"/>
+   <output type="toggle" message="92 07 7f" min="0" max="7f"/>
+   <output type="toggle" message="95 07 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE1_A">
+   <input type="toggle" message="96 30 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 30 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE1_B">
+   <input type="toggle" message="97 30 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 30 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE1_PLAY_A">
+   <output type="toggle" message="96 30 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE1_PLAY_B">
+   <output type="toggle" message="97 30 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE2_A">
+   <input type="toggle" message="96 31 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 31 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE2_B">
+   <input type="toggle" message="97 31 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 31 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE2_PLAY_A">
+   <output type="toggle" message="96 31 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE2_PLAY_B">
+   <output type="toggle" message="97 31 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE3_A">
+   <input type="toggle" message="96 32 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 32 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE3_B">
+   <input type="toggle" message="97 32 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 32 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE3_PLAY_A">
+   <output type="toggle" message="96 32 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE3_PLAY_B">
+   <output type="toggle" message="97 32 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE4_A">
+   <input type="toggle" message="96 33 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 33 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE4_B">
+   <input type="toggle" message="97 33 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 33 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE4_PLAY_A">
+   <output type="toggle" message="96 33 7f" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE4_PLAY_B">
+   <output type="toggle" message="97 33 7f" min="0" max="7f"/>
+  </control>
+  <control name="ScratchON_OFF_A">
+   <input type="toggle" message="91 03 7f" min="0" max="7f"/>
+   <output type="toggle" message="91 03 7f" min="0" max="7f"/>
+   <output type="toggle" message="94 03 7f" min="0" max="7f"/>
+  </control>
+  <control name="ScratchON_OFF_B">
+   <input type="toggle" message="92 03 7f" min="0" max="7f"/>
+   <output type="toggle" message="92 03 7f" min="0" max="7f"/>
+   <output type="toggle" message="95 03 7f" min="0" max="7f"/>
+  </control>
+  <control name="SHIFT_SAMPLE1_A">
+   <input type="toggle" message="96 38 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 38 7f" min="0" max="7f"/>
+  </control>
+  <control name="SHIFT_SAMPLE1_B">
+   <input type="toggle" message="97 38 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 38 7f" min="0" max="7f"/>
+  </control>
+  <control name="SHIFT_SAMPLE2_A">
+   <input type="toggle" message="96 39 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 39 7f" min="0" max="7f"/>
+  </control>
+  <control name="SHIFT_SAMPLE2_B">
+   <input type="toggle" message="97 39 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 39 7f" min="0" max="7f"/>
+  </control>
+  <control name="SHIFT_SAMPLE3_A">
+   <input type="toggle" message="96 3a 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 3a 7f" min="0" max="7f"/>
+  </control>
+  <control name="SHIFT_SAMPLE3_B">
+   <input type="toggle" message="97 3a 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 3a 7f" min="0" max="7f"/>
+  </control>
+  <control name="SHIFT_SAMPLE4_A">
+   <input type="toggle" message="96 3b 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 3b 7f" min="0" max="7f"/>
+  </control>
+  <control name="SHIFT_SAMPLE4_B">
+   <input type="toggle" message="97 3b 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 3b 7f" min="0" max="7f"/>
+  </control>
+  <control name="SYNC_A">
+   <input type="toggle" message="91 05 7f" min="0" max="7f"/>
+   <output type="toggle" message="91 05 7f" min="0" max="7f"/>
+  </control>
+  <control name="SYNC_B">
+   <input type="toggle" message="92 05 7f" min="0" max="7f"/>
+   <output type="toggle" message="92 05 7f" min="0" max="7f"/>
+  </control>
+  <control name="VOL_A">
+   <input type="interval" message="b1 00 47" min="0" max="7f"/>
+   <lsbit-input type="toggle" message="b1 20 47" min="0" max="7f"/>
+   <output type="interval" name="VU_A" message="91 23 7f" min="0" max="7f"/>
+  </control>
+  <control name="VOL_B">
+   <input type="interval" message="b2 00 7e" min="0" max="7f"/>
+   <lsbit-input type="toggle" message="b2 20 7e" min="0" max="7f"/>
+   <output type="interval" name="VU_B" message="92 23 7f" min="0" max="7f"/>
+  </control>
+  <control name="XFADER">
+   <input type="interval" message="b0 00 33" min="0" max="7f"/>
+   <lsbit-input type="toggle" message="b0 20 33" min="0" max="7f"/>
+  </control>
+  <control name="SHIFT_TOUCH_JOGA">
+   <input message="b4 0a 00" incremental="yes" steps-per-turn="256" type="interval" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="SHIFT_TOUCH_JOGB">
+   <input message="b5 0a 00" incremental="yes" steps-per-turn="256" type="interval" min="7f-40" max="1-3f"/>
+  </control>
+   <control name="LOAD_A">
+   <input type="toggle" message="94 07 7f" min="0" max="7f"/>
+  </control>
+  <control name="LOAD_B">
+   <input type="toggle" message="95 07 7f" min="0" max="7f"/>
+  </control>
+ </midi-device>
+ <midi-map>
+  <map name="CUE_A" action="chann=1  action=cue_stop value=&quot;auto temporary&quot;"/>
+  <map name="CUE_B" action="chann=2  action=cue_stop value=&quot;auto temporary&quot;"/>
+  <map name="CUE_SH_A" action="chann=1  action=stop value=&quot;auto&quot;"/>
+  <map name="CUE_SH_B" action="chann=2  action=stop value=&quot;auto&quot;"/>
+  <map name="DELETE_HC1_A" action="chann=1  action=delete_cue value=&quot;1&quot;"/>
+  <map name="DELETE_HC1_B" action="chann=2  action=delete_cue value=&quot;1&quot;"/>
+  <map name="DELETE_HC2_A" action="chann=1  action=delete_cue value=&quot;2&quot;"/>
+  <map name="DELETE_HC2_B" action="chann=2  action=delete_cue value=&quot;2&quot;"/>
+  <map name="DELETE_HC3_A" action="chann=1  action=delete_cue value=&quot;3&quot;"/>
+  <map name="DELETE_HC3_B" action="chann=2  action=delete_cue value=&quot;3&quot;"/>
+  <map name="DELETE_HC4_A" action="chann=1  action=delete_cue value=&quot;4&quot;"/>
+  <map name="DELETE_HC4_B" action="chann=2  action=delete_cue value=&quot;4&quot;"/>
+  <map name="FILTER_A" action="chann=1  action=set_pass_filter_amount value=&quot;auto temporary&quot;"/>
+  <map name="FILTER_B" action="chann=2  action=set_pass_filter_amount value=&quot;auto temporary&quot;"/>
+  <map name="FX_A1_ON" action="chann=1  action=toggle_effect value=&quot;1&quot;"/>
+  <map name="FX_A2_ON" action="chann=1  action=toggle_effect value=&quot;2&quot;"/>
+  <map name="FX_A3_ON" action="chann=1  action=toggle_effect value=&quot;3&quot;"/>
+  <map name="FX_B1_ON" action="chann=2  action=toggle_effect value=&quot;1&quot;"/>
+  <map name="FX_B2_ON" action="chann=2  action=toggle_effect value=&quot;2&quot;"/>
+  <map name="FX_B3_ON" action="chann=2  action=toggle_effect value=&quot;3&quot;"/>
+  <map name="HC1_A" action="chann=1  action=hot_cue value=&quot;1&quot;"/>
+  <map name="HC1_B" action="chann=2  action=hot_cue value=&quot;1&quot;"/>
+  <map name="HC2_A" action="chann=1  action=hot_cue value=&quot;2&quot;"/>
+  <map name="HC2_B" action="chann=2  action=hot_cue value=&quot;2&quot;"/>
+  <map name="HC3_A" action="chann=1  action=hot_cue value=&quot;3&quot;"/>
+  <map name="HC3_B" action="chann=2  action=hot_cue value=&quot;3&quot;"/>
+  <map name="HC4_A" action="chann=1  action=hot_cue value=&quot;4&quot;"/>
+  <map name="HC4_B" action="chann=2  action=hot_cue value=&quot;4&quot;"/>
+  <map name="HOTCUE_TAB_A" action="chann=1  action=show_track_tab value=&quot;0&quot;"/>
+  <map name="HOTCUE_TAB_B" action="chann=2  action=show_track_tab value=&quot;0&quot;"/>
+  <map name="JOG_bend_A" action="chann=1  action=pitch_bend value=&quot;auto&quot;"/>
+  <map name="JOG_bend_B" action="chann=2  action=pitch_bend value=&quot;auto&quot;"/>
+  <map name="JOG_SCRATCH_A" action="chann=1  action=scratch value=&quot;auto&quot;"/>
+  <map name="JOG_SCRATCH_B" action="chann=2  action=scratch value=&quot;auto&quot;"/>
+  <map name="JOG_SHIFT_BEND_A" action="chann=1  action=seek_loop value=&quot;4&quot;"/>
+  <map name="JOG_SHIFT_BEND_B" action="chann=2  action=seek_loop value=&quot;4&quot;"/>
+  <map name="JOG_TOUCH_A" action="chann=1  action=scratch value=&quot;1 temporary&quot;"/>
+  <map name="JOG_TOUCH_B" action="chann=2  action=scratch value=&quot;1 temporary&quot;"/>
+  <map name="LOOP_1_BEAT_A" action="chann=1  action=loop value=&quot;1&quot;"/>
+  <map name="LOOP_1_BEAT_B" action="chann=2  action=loop value=&quot;1&quot;"/>
+  <map name="LOOP_2_BEAT_A" action="chann=1  action=loop value=&quot;2&quot;"/>
+  <map name="LOOP_2_BEAT_B" action="chann=2  action=loop value=&quot;2&quot;"/>
+  <map name="LOOP_4_BEAT_A" action="chann=1  action=loop value=&quot;4&quot;"/>
+  <map name="LOOP_4_BEAT_B" action="chann=2  action=loop value=&quot;4&quot;"/>
+  <map name="LOOP_8_BEAT_A" action="chann=1  action=loop value=&quot;8&quot;"/>
+  <map name="LOOP_8_BEAT_B" action="chann=2  action=loop value=&quot;8&quot;"/>
+  <map name="LOW_A" action="chann=1  action=bass value=&quot;+0&quot;"/>
+  <map name="LOW_B" action="chann=2  action=bass value=&quot;+0&quot;"/>
+  <map name="MASTER_VOL_L" action="chann=default  action=level_left value=&quot;auto&quot;"/>
+  <map name="MASTER_VOL_R" action="chann=default  action=level_right value=&quot;auto&quot;"/>
+  <map name="PFL_A" action="chann=1  action=pfl_select value=&quot;0&quot;"/>
+  <map name="PFL_B" action="chann=2  action=pfl_select value=&quot;0&quot;"/>
+  <map name="PHASE_LED_LEFT_A" action="chann=1  action=track_phase value=&quot;+1&quot;"/>
+  <map name="PHASE_LED_LEFT_B" action="chann=2  action=track_phase value=&quot;+1&quot;"/>
+  <map name="PHASE_LED_RIGHT_A" action="chann=1  action=track_phase value=&quot;-1&quot;"/>
+  <map name="PHASE_LED_RIGHT_B" action="chann=2  action=track_phase value=&quot;-1&quot;"/>
+  <map name="PITCH_A" action="chann=1  action=pitch value=&quot;auto&quot; takeover=&quot;1&quot;"/>
+  <map name="PITCH_B" action="chann=2  action=pitch value=&quot;auto&quot; takeover=&quot;1&quot;"/>
+  <map name="PITCH_LED_DOWN_A" action="chann=1  action=track_speed value=&quot;-1&quot;"/>
+  <map name="PITCH_LED_DOWN_B" action="chann=2  action=track_speed value=&quot;-1&quot;"/>
+  <map name="PITCH_LED_UP_A" action="chann=1  action=track_speed value=&quot;+1&quot;"/>
+  <map name="PITCH_LED_UP_B" action="chann=2  action=track_speed value=&quot;+1&quot;"/>
+  <map name="PLAY_A" action="chann=1  action=play_pause value=&quot;0&quot;"/>
+  <map name="PLAY_B" action="chann=2  action=play_pause value=&quot;0&quot;"/>
+  <map name="SAMPLE1_A" action="chann=3001  action=sample_load_play value=&quot;1 temporary&quot;"/>
+  <map name="SAMPLE1_B" action="chann=4001  action=sample_load_play value=&quot;1 temporary&quot;"/>
+  <map name="SAMPLE1_PLAY_A" action="chann=3001  action=sample_play_now value=&quot;1&quot;"/>
+  <map name="SAMPLE1_PLAY_B" action="chann=4001  action=sample_play_now value=&quot;1&quot;"/>
+  <map name="SAMPLE2_A" action="chann=3002  action=sample_load_play value=&quot;1 temporary&quot;"/>
+  <map name="SAMPLE2_B" action="chann=4002  action=sample_load_play value=&quot;1 temporary&quot;"/>
+  <map name="SAMPLE2_PLAY_A" action="chann=3002  action=sample_play_now value=&quot;1&quot;"/>
+  <map name="SAMPLE2_PLAY_B" action="chann=4002  action=sample_play_now value=&quot;1&quot;"/>
+  <map name="SAMPLE3_A" action="chann=3003  action=sample_load_play value=&quot;1 temporary&quot;"/>
+  <map name="SAMPLE3_B" action="chann=4003  action=sample_load_play value=&quot;1 temporary&quot;"/>
+  <map name="SAMPLE3_PLAY_A" action="chann=3003  action=sample_play_now value=&quot;1&quot;"/>
+  <map name="SAMPLE3_PLAY_B" action="chann=4003  action=sample_play_now value=&quot;1&quot;"/>
+  <map name="SAMPLE4_A" action="chann=3004  action=sample_load_play value=&quot;1 temporary&quot;"/>
+  <map name="SAMPLE4_B" action="chann=4004  action=sample_load_play value=&quot;1 temporary&quot;"/>
+  <map name="SAMPLE4_PLAY_A" action="chann=3004  action=sample_play_now value=&quot;1&quot;"/>
+  <map name="SAMPLE4_PLAY_B" action="chann=4004  action=sample_play_now value=&quot;1&quot;"/>
+  <map name="ScratchON_OFF_A" action="chann=1  action=scratch_mode value=&quot;auto&quot;"/>
+  <map name="ScratchON_OFF_B" action="chann=2  action=scratch_mode value=&quot;auto&quot;"/>
+  <map name="SHIFT_SAMPLE1_A" action="chann=3001  action=sample_stop value=&quot;1&quot;"/>
+  <map name="SHIFT_SAMPLE1_B" action="chann=4001  action=sample_stop value=&quot;1&quot;"/>
+  <map name="SHIFT_SAMPLE2_A" action="chann=3002  action=sample_stop value=&quot;1&quot;"/>
+  <map name="SHIFT_SAMPLE2_B" action="chann=4002  action=sample_stop value=&quot;1&quot;"/>
+  <map name="SHIFT_SAMPLE3_A" action="chann=3003  action=sample_stop value=&quot;1&quot;"/>
+  <map name="SHIFT_SAMPLE3_B" action="chann=4003  action=sample_stop value=&quot;1&quot;"/>
+  <map name="SHIFT_SAMPLE4_A" action="chann=3004  action=sample_stop value=&quot;1&quot;"/>
+  <map name="SHIFT_SAMPLE4_B" action="chann=4004  action=sample_stop value=&quot;1&quot;"/>
+  <map name="SYNC_A" action="chann=1  action=sync value=&quot;0&quot;"/>
+  <map name="SYNC_B" action="chann=2  action=sync value=&quot;0&quot;"/>
+  <map name="VOL_A" action="chann=1  action=level value=&quot;auto&quot;"/>
+  <map name="VOL_B" action="chann=2  action=level value=&quot;auto&quot;"/>
+  <map name="XFADER" action="chann=default  action=crossfader value=&quot;-16383&quot;"/>
+  <map action="chann=default  action=browser_up_down value=&quot;auto&quot;" name="SHIFT_TOUCH_JOGA"/>
+  <map action="chann=default  action=browser_up_down value=&quot;auto&quot;" name="SHIFT_TOUCH_JOGB"/>
+  <map action="chann=1  action=browser_load_deck_or_expand value=&quot;auto&quot;" name="LOAD_A"/>
+  <map action="chann=2  action=browser_load_deck_or_expand value=&quot;auto&quot;" name="LOAD_B"/>
+ </midi-map>
+</midi>
