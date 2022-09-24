@@ -2,7 +2,7 @@ This is a list with ALMOST every signal that the Starlight DJ Controller sends t
 I used Wireshark to capture everything and the wrote this for better viewing (?)
 A signal is sent when you press a button, and when you release it, that's why everything is labeled pressed/released, it may or may not be unnecessary.
 About the controls with intervals of values, like faders and knobs, I only recorded the most relevant parts, Min/Max level for Volume knobs, and Min/Center/Max level for the rest.
-Now why is this usefull. Well DJUCED has a stupid remaping system that made me basically hack into my controller. It's an XML file with all the buttons and knobs declared, and then in another section is what they do. And the default maping for the Starlight...I just don't like it. And I don't want to be paying every month for serato dj pro since spending 3 hours pressing every button in the controller and writing down what each button and knob does is so fun....and free.
+Now why is this usefull. Well DJUCED has a stupid remapping system that made me basically hack into my controller. It's an XML file with all the buttons and knobs declared, and then in another section is what they do. And the default mapping for the Starlight...I just don't like it. And I don't want to be paying every month for serato dj pro since spending 3 hours pressing every button in the controller and writing down what each button and knob does is so fun....and free.
 Now here is what I know...
 - The 'Message' fields are the information that djuced uses to set the mapping.
 - The Messages are a bunch of hex values because....programmers (idk why actually)
