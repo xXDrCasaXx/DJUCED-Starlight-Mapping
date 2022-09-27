@@ -1,5 +1,5 @@
 <!DOCTYPE MidiML>
-<midi name="DJControl Starlight" map-name="Starlight-1" description="Hercules DJControl Starlight custom mapping 1- test" sysex="F07E7F060200014E02001B0001000000F7" version="3">
+<midi name="DJControl Starlight" map-name="DJControl Starlight-test-2" description="Hercules DJControl Starlight default MIDI Mapping" sysex="F07E7F060200014E02001B0001000000F7" version="3">
  <picture>iVBORw0KGgoAAAANSUhEUgAAAHgAAAAoCAYAAAA16j4lAAAABGdBTUEAAK/INwWK6QAAABl0RVh0
 U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAACZHSURBVHja7Hx5kGV3dd65y7tv631fprtn
 n0GMZrSg0YpAUEJkhCQW2wmLSZxAgFAVYjtxqEpiA674r8QUEHBSlMsYrEpA7BCwLAvJAgwzGo1m
@@ -174,6 +174,21 @@ LhZCEhqqhu8gPQXEl2nc+DJEOGklrHkQqc1kygk4ueg2PCVDvLMXtyFtpCBNB4IF5DVxTR8sMhGa
 qzYME3pO6FMftqGhgiEJynLSaeq600zYe2Ggr7VC4xYoex9I0Eg+n0uvrS6bHR3txsTEuOm6NaPZ
 bJhB6BtjE6MmwoVRrhZ5PSzXN65MXjEqDGu4RzrtGFenJuPxH8NocQp8NpJOYv3uwxOfu39/5+dr
 py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
+<!--
+    Note: To create new controls, find one with a behavior similar to the one you want, change the name, and the messages accordingly, use the text file with all the messages; that goes in the 'midi-device' section. Then in the 'midi-map', you add, following the format of the other instructions, your command, with the name that you gave to it, and the action, from the other text file with the commands and buttons associated. Just keep experimentig, and backup constantly in case we break something .-.
+    Changes in this file:
+        + LOOP button shows the 'Loop Roll' section on DJUCED
+        + LOOP_1 activates simple loop, based on the number in the autoloop (not based on predefined beats)
+        + LOOP_2 activates loop roll, based on the same number
+        + LOOP_3 and LOOP_4 do 'loop_half' and 'loop_double' respectively
+        + All SAMPLER default settings were commented out to avoid conflicts with the new ones
+        + SAMPLER button shows the 'Beat Jump' section on DJUCED
+        + SAMPLER_1 goes 1 beat forward and with SHIFT goes 1 beat back
+        + SAMPLER_2 goes 2 beats forward and with SHIFT goes 2 beats back
+        + SAMPLER_3 goes 4 beats forward and with SHIFT goes 4 beats back
+        + SAMPLER_4 goes 8 beats forward and with SHIFT goes 8 beats back
+        + Deleted MASTER_VOL_L and created MASTER_VOLUME to control the master volume with the MASTER knob, didn't work
+-->
  <help-url url=""/>
  <soundcard channels="4" volume="true"/>
  <decks comboboxlayoutIndex="0" MIXER="true" REC="false" FX="false" mode="2H">
@@ -183,20 +198,6 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <deck type="sampler" load="" ID="4" cells="4"/>
  </decks>
  <midi-device>
-    <!--So here basically are the controls declared well identified with a name and their messages,
-        Changing the message fields will change the buttons set for that particular control, there are
-        some things that I don't understand yet, like the two output fields in some controls, and the
-        things with intervals of values.
-        You can also change the name of the control, but make sure that you write the same name in the midi-map section,
-        because it's gonna look for the same name to execute the command.
-        Quick note: I couldn't figure it out how to create/add new controls, so for now I'm just replacing the existing ones
-            edit: so I duplicated one control, changed its name and instruction, AND IT WORKED (O_o)
-            the subjects in question are:
-            At the end of the midi-device section: LOOP_TAB_B, I duplicated it and made BEATJUMP_A
-            Then created the set of instructions at the end of the midi-map section.
-            So as long as you duplicate controls with similar behaviors, like HOT CUE, LOOP ROLL, SLICER and BEAT JUMP have pretty much the same structure, it will probably work, if not you can just Ctrl+Z
-            So I made the Sampler section on the controller, go to the BEAT JUMP section of DJUCED, I'll make the SAMPLE_1/2/3/4 keys to activate the different beat jumps.
-            I'm also going to test if I can change the values of the BeatJumps, like instead of 8 I want it to be 16 (I couldn't)-->
   <control name="CUE_A">
    <input type="toggle" message="91 06 7f" min="0" max="7f"/>
    <output type="toggle" message="91 06 7f" min="0" max="7f"/>
@@ -323,9 +324,6 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <control name="HOTCUE_TAB_B">
    <input type="toggle" message="92 0f 7f" min="0" max="7f"/>
   </control>
-  <!--</control name="LOOP_TAB_A">
-   <input type="toggle" message="91 10 7f" min="0" max="7f"/>
-  </control>-->
   <control name="JOG_bend_A">
    <input type="interval" incremental="yes" steps-per-turn="256" message="b1 09 7f" min="7f-40" max="1-3f"/>
   </control>
@@ -350,35 +348,35 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <control name="JOG_TOUCH_B">
    <input type="toggle" message="92 08 00" min="0" max="7f"/>
   </control>
-  <control name="LOOP_1_BEAT_A">
+  <control name="LOOP_TOGGLE_A">    <!--Changed from LOOP_1_BEAT_A-->
    <input type="toggle" message="96 10 7f" min="0" max="7f"/>
    <output type="toggle" message="96 10 7f" min="0" max="7f"/>
   </control>
-  <control name="LOOP_1_BEAT_B">
+  <control name="LOOP_TOGGLE_B">    <!--Changed from LOOP_1_BEAT_B-->
    <input type="toggle" message="97 10 7f" min="0" max="7f"/>
    <output type="toggle" message="97 10 7f" min="0" max="7f"/>
   </control>
-  <control name="LOOP_2_BEAT_A">
+  <control name="LOOP_ROLL_TOGGLE_A">    <!--Changed from LOOP_2_BEAT_A-->
    <input type="toggle" message="96 11 7f" min="0" max="7f"/>
    <output type="toggle" message="96 11 7f" min="0" max="7f"/>
   </control>
-  <control name="LOOP_2_BEAT_B">
+  <control name="LOOP_ROLL_TOGGLE_B">        <!--Changed from LOOP_2_BEAT_B-->
    <input type="toggle" message="97 11 7f" min="0" max="7f"/>
    <output type="toggle" message="97 11 7f" min="0" max="7f"/>
   </control>
-  <control name="LOOP_4_BEAT_A">
+  <control name="LOOP_HALF_A">        <!--Changed from LOOP_4_BEAT_A-->
    <input type="toggle" message="96 12 7f" min="0" max="7f"/>
    <output type="toggle" message="96 12 7f" min="0" max="7f"/>
   </control>
-  <control name="LOOP_4_BEAT_B">
+  <control name="LOOP_HALF_B">      <!--Changed from LOOP_4_BEAT_B-->  
    <input type="toggle" message="97 12 7f" min="0" max="7f"/>
    <output type="toggle" message="97 12 7f" min="0" max="7f"/>
   </control>
-  <control name="LOOP_8_BEAT_A">
+  <control name="LOOP_DOUBLE_A">      <!--Changed from LOOP_8_BEAT_A-->
    <input type="toggle" message="96 13 7f" min="0" max="7f"/>
    <output type="toggle" message="96 13 7f" min="0" max="7f"/>
   </control>
-  <control name="LOOP_8_BEAT_B">
+  <control name="LOOP_DOUBLE_B">        <!--Changed from LOOP_8_BEAT_B-->
    <input type="toggle" message="97 13 7f" min="0" max="7f"/>
    <output type="toggle" message="97 13 7f" min="0" max="7f"/>
   </control>
@@ -390,11 +388,13 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
    <input type="interval" message="b2 02 61" min="0" max="7f"/>
    <lsbit-input type="toggle" message="b2 22 61" min="0" max="7f"/>
   </control>
+<!--
   <control name="MASTER_VOL_L">
-   <output type="interval" name="MASTER_L" message="b0 03 7f" min="0" max="7f"/>
+   <output type="interval" name="MASTER_L" message="b0 40 7f" min="0" max="7f"/>
   </control>
+-->
   <control name="MASTER_VOL_R">
-   <output type="interval" name="MASTER_R" message="b0 04 7f" min="0" max="7f"/>
+   <output type="interval" name="MASTER_R" message="b0 41 7f" min="0" max="7f"/>
   </control>
   <control name="PFL_A">
    <input type="toggle" message="91 0c 7f" min="0" max="7f"/>
@@ -446,7 +446,8 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
    <output type="toggle" message="92 07 7f" min="0" max="7f"/>
    <output type="toggle" message="95 07 7f" min="0" max="7f"/>
   </control>
-  <control name="SAMPLE1_A">    
+  <!--
+  <control name="SAMPLE1_A">
    <input type="toggle" message="96 30 7f" min="0" max="7f"/>
    <output type="toggle" message="96 30 7f" min="0" max="7f"/>
   </control>
@@ -454,7 +455,7 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
    <input type="toggle" message="97 30 7f" min="0" max="7f"/>
    <output type="toggle" message="97 30 7f" min="0" max="7f"/>
   </control>
-  <control name="SAMPLE1_PLAY_A">   <!--Sample1_A changed to beatjump-->
+  <control name="SAMPLE1_PLAY_A">
    <output type="toggle" message="96 30 7f" min="0" max="7f"/>
   </control>
   <control name="SAMPLE1_PLAY_B">
@@ -502,6 +503,7 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <control name="SAMPLE4_PLAY_B">
    <output type="toggle" message="97 33 7f" min="0" max="7f"/>
   </control>
+-->
   <control name="ScratchON_OFF_A">
    <input type="toggle" message="91 03 7f" min="0" max="7f"/>
    <output type="toggle" message="91 03 7f" min="0" max="7f"/>
@@ -512,6 +514,7 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
    <output type="toggle" message="92 03 7f" min="0" max="7f"/>
    <output type="toggle" message="95 03 7f" min="0" max="7f"/>
   </control>
+<!--
   <control name="SHIFT_SAMPLE1_A">
    <input type="toggle" message="96 38 7f" min="0" max="7f"/>
    <output type="toggle" message="96 38 7f" min="0" max="7f"/>
@@ -544,6 +547,7 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
    <input type="toggle" message="97 3b 7f" min="0" max="7f"/>
    <output type="toggle" message="97 3b 7f" min="0" max="7f"/>
   </control>
+-->
   <control name="SYNC_A">
    <input type="toggle" message="91 05 7f" min="0" max="7f"/>
    <output type="toggle" message="91 05 7f" min="0" max="7f"/>
@@ -572,22 +576,102 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <control name="SHIFT_TOUCH_JOGB">
    <input message="b5 0a 00" incremental="yes" steps-per-turn="256" type="interval" min="7f-40" max="1-3f"/>
   </control>
-   <control name="LOOP_TAB_A">
+   <control name="LOAD_A">
+   <input type="toggle" message="94 07 7f" min="0" max="7f"/>
+  </control>
+  <control name="LOAD_B">
+   <input type="toggle" message="95 07 7f" min="0" max="7f"/>
+  </control>
+  <!--New Controls Added-->
+  <control name="LOOP_TAB_A">
    <input type="toggle" message="91 10 7f" min="0" max="7f"/>
   </control>
   <control name="LOOP_TAB_B">
    <input type="toggle" message="92 10 7f" min="0" max="7f"/>
   </control>
-  <control name="BEATJUMP_A">     <!--new, delete if error-->
+  <control name="BEATJUMP_A">
    <input type="toggle" message="91 12 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_B">
+   <input type="toggle" message="92 12 7f" min="0" max="7f"/>
+  </control>
+   <control name="BEATJUMP_+1_A">
+   <input type="toggle" message="96 30 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 30 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 38 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_-1_A">
+   <input type="toggle" message="96 38 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 38 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_+1_B">
+   <input type="toggle" message="97 30 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 30 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 38 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_-1_B">
+   <input type="toggle" message="97 38 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 38 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_+2_A">
+   <input type="toggle" message="96 31 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 31 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 39 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_-2_A">
+   <input type="toggle" message="96 39 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 39 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_+2_B">
+   <input type="toggle" message="97 31 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 31 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 39 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_-2_B">
+   <input type="toggle" message="97 39 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 39 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_+4_A">
+   <input type="toggle" message="96 32 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 32 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 3a 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_-4_A">
+   <input type="toggle" message="96 3a 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 3a 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_+4_B">
+   <input type="toggle" message="97 32 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 32 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 3a 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_-4_B">
+   <input type="toggle" message="97 3a 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 3a 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_+8_A">
+   <input type="toggle" message="96 33 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 33 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 3b 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_-8_A">
+   <input type="toggle" message="96 3b 7f" min="0" max="7f"/>
+   <output type="toggle" message="96 3b 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_+8_B">
+   <input type="toggle" message="97 33 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 33 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 3b 7f" min="0" max="7f"/>
+  </control>
+  <control name="BEATJUMP_-8_B">
+   <input type="toggle" message="97 3b 7f" min="0" max="7f"/>
+   <output type="toggle" message="97 3b 7f" min="0" max="7f"/>
+  </control>
+  <control name="MASTER_VOLUME">
+   <output type="interval" name="MASTER" message="b0 03 7f" min="0" max="7f"/>
   </control>
  </midi-device>
  <midi-map>
-    <!--Here are the commands that are executed when you push the button based on the configuration
-        above.
-        Notes: + the '&quot' thing, I don't know what that is, so I leave it alone
-               + the 'temporary' means that the action is gonna last while the corresponding button is 
-                 pusshed down, once you let it go, the action stops.-->
   <map name="CUE_A" action="chann=1  action=cue_stop value=&quot;auto temporary&quot;"/>
   <map name="CUE_B" action="chann=2  action=cue_stop value=&quot;auto temporary&quot;"/>
   <map name="CUE_SH_A" action="chann=1  action=stop value=&quot;auto&quot;"/>
@@ -618,7 +702,6 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <map name="HC4_B" action="chann=2  action=hot_cue value=&quot;4&quot;"/>
   <map name="HOTCUE_TAB_A" action="chann=1  action=show_track_tab value=&quot;0&quot;"/>
   <map name="HOTCUE_TAB_B" action="chann=2  action=show_track_tab value=&quot;0&quot;"/>
-  <!--<map name="LOOP_TAB_A" action="chann=2  action=show_track_tab value=&quot;1&quot;"/>-->
   <map name="JOG_bend_A" action="chann=1  action=pitch_bend value=&quot;auto&quot;"/>
   <map name="JOG_bend_B" action="chann=2  action=pitch_bend value=&quot;auto&quot;"/>
   <map name="JOG_SCRATCH_A" action="chann=1  action=scratch value=&quot;auto&quot;"/>
@@ -627,18 +710,18 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <map name="JOG_SHIFT_BEND_B" action="chann=2  action=seek_loop value=&quot;4&quot;"/>
   <map name="JOG_TOUCH_A" action="chann=1  action=scratch value=&quot;1 temporary&quot;"/>
   <map name="JOG_TOUCH_B" action="chann=2  action=scratch value=&quot;1 temporary&quot;"/>
-  <map name="LOOP_1_BEAT_A" action="chann=1  action=loop value=&quot;0"/>
-  <map name="LOOP_1_BEAT_B" action="chann=2  action=loop value=&quot;0"/>
-  <map name="LOOP_2_BEAT_A" action="chann=1  action=loop_roll value=&quot;0.125 temporary&quot;"/>
-  <map name="LOOP_2_BEAT_B" action="chann=2  action=loop_roll value=&quot;0.125 temporary&quot;"/>
-  <map name="LOOP_4_BEAT_A" action="chann=1  action=loop_half value=&quot;0"/>
-  <map name="LOOP_4_BEAT_B" action="chann=2  action=loop_half value=&quot;0"/>
-  <map name="LOOP_8_BEAT_A" action="chann=1  action=loop_double value=&quot;0"/>
-  <map name="LOOP_8_BEAT_B" action="chann=2  action=loop_double value=&quot;0"/>
+  <map name="LOOP_TOGGLE_A" action="chann=1  action=loop value=&quot;0&quot;"/>
+  <map name="LOOP_TOGGLE_B" action="chann=2  action=loop value=&quot;0&quot;"/>
+  <map name="LOOP_ROLL_TOGGLE_A" action="chann=1  action=loop_roll value=&quot;0&quot;"/>
+  <map name="LOOP_ROLL_TOGGLE_B" action="chann=2  action=loop_roll value=&quot;0&quot;"/>
+  <map name="LOOP_HALF_A" action="chann=1  action=loop_half value=&quot;0&quot;"/>
+  <map name="LOOP_HALF_B" action="chann=2  action=loop_half value=&quot;0&quot;"/>
+  <map name="LOOP_DOUBLE_A" action="chann=1  action=loop_double value=&quot;0&quot;"/>
+  <map name="LOOP_DOUBLE_B" action="chann=2  action=loop_double value=&quot;0&quot;"/>
   <map name="LOW_A" action="chann=1  action=bass value=&quot;+0&quot;"/>
   <map name="LOW_B" action="chann=2  action=bass value=&quot;+0&quot;"/>
-  <map name="MASTER_VOL_L" action="chann=default  action=master_volume value=&quot;auto&quot;"/>
-  <map name="MASTER_VOL_R" action="chann=default  action=headphone_mix value=&quot;auto&quot;"/>
+  <map name="MASTER_VOL_L" action="chann=default  action=level_left value=&quot;auto&quot;"/>
+  <map name="MASTER_VOL_R" action="chann=default  action=level_right value=&quot;auto&quot;"/>
   <map name="PFL_A" action="chann=1  action=pfl_select value=&quot;0&quot;"/>
   <map name="PFL_B" action="chann=2  action=pfl_select value=&quot;0&quot;"/>
   <map name="PHASE_LED_LEFT_A" action="chann=1  action=track_phase value=&quot;+1&quot;"/>
@@ -686,9 +769,29 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <map name="XFADER" action="chann=default  action=crossfader value=&quot;-16383&quot;"/>
   <map action="chann=default  action=browser_up_down value=&quot;auto&quot;" name="SHIFT_TOUCH_JOGA"/>
   <map action="chann=default  action=browser_up_down value=&quot;auto&quot;" name="SHIFT_TOUCH_JOGB"/>
-  <map action="chann=1  action=show_track_tab value=&quot;1&quot;" name="LOOP_TAB_A"/>
-  <map action="chann=2  action=show_track_tab value=&quot;1&quot;" name="LOOP_TAB_B"/>
-  <map action ="chann=1  action=show_track_tab value=&quot;3&quot;" name="BEATJUMP_A"/>   <!--delete if error-->
-
+  <map action="chann=1  action=browser_load_deck_or_expand value=&quot;auto&quot;" name="LOAD_A"/>
+  <map action="chann=2  action=browser_load_deck_or_expand value=&quot;auto&quot;" name="LOAD_B"/>
+  <!--New Commands-->
+  <map name="LOOP_TAB_A" action="chann=1  action=show_track_tab value=&quot;1&quot;"/> <!--shows loop section on deck 1-->
+  <map name="LOOP_TAB_B" action="chann=2  action=show_track_tab value=&quot;1&quot;"/> <!--shows loop section on deck 2-->
+  <map name="BEATJUMP_A" action="chann=1  action=show_track_tab value=&quot;3&quot;"/> <!--shows beatjump section on deck 1-->
+  <map name="BEATJUMP_B" action="chann=2  action=show_track_tab value=&quot;3&quot;"/> <!--shows beatjump section on deck 2-->
+  <map name="BEATJUMP_+1_A" action="chann=1 action=skip_beat value=&quot;+1&quot;"/>   <!--BeatJump 1 beat forward-->
+  <map name="BEATJUMP_-1_A" action="chann=1 action=skip_beat value=&quot;-1&quot;"/>   <!--BeatJump 1 beat back-->
+  <map name="BEATJUMP_+1_B" action="chann=2 action=skip_beat value=&quot;+1&quot;"/>   <!--BeatJump 1 beat forward-->
+  <map name="BEATJUMP_-1_B" action="chann=2 action=skip_beat value=&quot;-1&quot;"/>   <!--BeatJump 1 beat back-->
+  <map name="BEATJUMP_+2_A" action="chann=1 action=skip_beat value=&quot;+2&quot;"/>   <!--BeatJump 2 beats forward-->
+  <map name="BEATJUMP_-2_A" action="chann=1 action=skip_beat value=&quot;-2&quot;"/>   <!--BeatJump 2 beats back-->
+  <map name="BEATJUMP_+2_B" action="chann=2 action=skip_beat value=&quot;+2&quot;"/>   <!--BeatJump 2 beats forward-->
+  <map name="BEATJUMP_-2_B" action="chann=2 action=skip_beat value=&quot;-2&quot;"/>   <!--BeatJump 2 beats back-->
+  <map name="BEATJUMP_+4_A" action="chann=1 action=skip_beat value=&quot;+4&quot;"/>   <!--BeatJump 4 beats forward-->
+  <map name="BEATJUMP_-4_A" action="chann=1 action=skip_beat value=&quot;-4&quot;"/>   <!--BeatJump 4 beats back-->
+  <map name="BEATJUMP_+4_B" action="chann=2 action=skip_beat value=&quot;+4&quot;"/>   <!--BeatJump 4 beats forward-->
+  <map name="BEATJUMP_-4_B" action="chann=2 action=skip_beat value=&quot;-4&quot;"/>   <!--BeatJump 4 beats back-->
+  <map name="BEATJUMP_+8_A" action="chann=1 action=skip_beat value=&quot;+8&quot;"/>   <!--BeatJump 8 beats forward-->
+  <map name="BEATJUMP_-8_A" action="chann=1 action=skip_beat value=&quot;-8&quot;"/>   <!--BeatJump 8 beats back-->
+  <map name="BEATJUMP_+8_B" action="chann=2 action=skip_beat value=&quot;+8&quot;"/>   <!--BeatJump 8 beats forward-->
+  <map name="BEATJUMP_-8_B" action="chann=2 action=skip_beat value=&quot;-8&quot;"/>   <!--BeatJump 8 beats back-->
+  <map name="MASTER_VOLUME" action="chann=default  action=master_volume value=&quot;auto&quot;"/> <!--controls the master volume with the master knob (doesn't work ;-;)-->
  </midi-map>
 </midi>
