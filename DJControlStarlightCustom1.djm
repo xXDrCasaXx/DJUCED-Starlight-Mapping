@@ -189,7 +189,14 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
         things with intervals of values.
         You can also change the name of the control, but make sure that you write the same name in the midi-map section,
         because it's gonna look for the same name to execute the command.
-        Quick note: I couldn't figure it out how to create/add new controls, so for now I'm just replacing the existing ones-->
+        Quick note: I couldn't figure it out how to create/add new controls, so for now I'm just replacing the existing ones
+            edit: so I duplicated one control, changed its name and instruction, AND IT WORKED (O_o)
+            the subjects in question are:
+            At the end of the midi-device section: LOOP_TAB_B, I duplicated it and made BEATJUMP_A
+            Then created the set of instructions at the end of the midi-map section.
+            So as long as you duplicate controls with similar behaviors, like HOT CUE, LOOP ROLL, SLICER and BEAT JUMP have pretty much the same structure, it will probably work, if not you can just Ctrl+Z
+            So I made the Sampler section on the controller, go to the BEAT JUMP section of DJUCED, I'll make the SAMPLE_1/2/3/4 keys to activate the different beat jumps.
+            I'm also going to test if I can change the values of the BeatJumps, like instead of 8 I want it to be 16 (I couldn't)-->
   <control name="CUE_A">
    <input type="toggle" message="91 06 7f" min="0" max="7f"/>
    <output type="toggle" message="91 06 7f" min="0" max="7f"/>
@@ -439,7 +446,7 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
    <output type="toggle" message="92 07 7f" min="0" max="7f"/>
    <output type="toggle" message="95 07 7f" min="0" max="7f"/>
   </control>
-  <control name="SAMPLE1_A">
+  <control name="SAMPLE1_A">    
    <input type="toggle" message="96 30 7f" min="0" max="7f"/>
    <output type="toggle" message="96 30 7f" min="0" max="7f"/>
   </control>
@@ -447,7 +454,7 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
    <input type="toggle" message="97 30 7f" min="0" max="7f"/>
    <output type="toggle" message="97 30 7f" min="0" max="7f"/>
   </control>
-  <control name="SAMPLE1_PLAY_A">
+  <control name="SAMPLE1_PLAY_A">   <!--Sample1_A changed to beatjump-->
    <output type="toggle" message="96 30 7f" min="0" max="7f"/>
   </control>
   <control name="SAMPLE1_PLAY_B">
@@ -571,6 +578,9 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <control name="LOOP_TAB_B">
    <input type="toggle" message="92 10 7f" min="0" max="7f"/>
   </control>
+  <control name="BEATJUMP_A">     <!--new, delete if error-->
+   <input type="toggle" message="91 12 7f" min="0" max="7f"/>
+  </control>
  </midi-device>
  <midi-map>
     <!--Here are the commands that are executed when you push the button based on the configuration
@@ -678,6 +688,7 @@ py7oI++v/n8OXv1/dLz686qCX/35v/Ln/wgwAAeX5+OJjU5vAAAAAElFTkSuQmCC</picture>
   <map action="chann=default  action=browser_up_down value=&quot;auto&quot;" name="SHIFT_TOUCH_JOGB"/>
   <map action="chann=1  action=show_track_tab value=&quot;1&quot;" name="LOOP_TAB_A"/>
   <map action="chann=2  action=show_track_tab value=&quot;1&quot;" name="LOOP_TAB_B"/>
+  <map action ="chann=1  action=show_track_tab value=&quot;3&quot;" name="BEATJUMP_A"/>   <!--delete if error-->
 
  </midi-map>
 </midi>
